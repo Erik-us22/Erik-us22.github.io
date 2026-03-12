@@ -8,70 +8,104 @@
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.7;
-    background-color: #f4f7f6; /* Um cinza claro de fundo */
+    /* Alterado para o degradê azul da imagem */
+    background: radial-gradient(circle at center, #2b4a8c 0%, #102144 100%);
+    background-attachment: fixed;
     color: #333;
 }
 
-/* --- Container Principal --- */
-main, header, footer {
-    width: 90%;
-    max-width: 900px; /* Limita a largura para melhor leitura */
-    margin: 20px auto;
-    padding: 25px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-
-/* --- Cabeçalho --- */
+/* --- NOVO Cabeçalho (Estilo da Foto) --- */
 header {
-    text-align: center;
-    background-color: #004a99; /* Um azul corporativo forte */
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 40px;
+    background: transparent; /* Removido o fundo branco fixo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
     color: #fff;
-    padding: 30px;
+    text-align: left; /* Alinhado à esquerda conforme a imagem */
 }
 
-header h1 {
-    margin-bottom: 10px;
-    font-size: 2.2em; /* 2.2x o tamanho da fonte padrão */
-    font-weight: 700;
+.foto-perfil img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%; /* Faz a foto ficar circular */
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    object-fit: cover;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }
 
-header h2 {
+.texto-apresentacao h1 {
+    font-size: 3em;
+    margin-bottom: 5px;
+}
+
+.texto-apresentacao p {
     font-size: 1.1em;
-    font-weight: 300; /* Fonte mais leve */
+    max-width: 500px;
     color: #dbeaff;
 }
 
-/* --- Seções --- */
-section {
-    margin-bottom: 30px;
+/* --- Botões Estilo "Bolas" --- */
+.botoes-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
 }
 
+.btn {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    color: #fff;
+    transition: transform 0.3s, filter 0.3s;
+    text-align: center;
+}
+
+.btn.curriculo { background-color: #5e5ce6; }
+.btn.projetos { border: 2px solid #70c7e8; background: transparent; }
+.btn.contato { background-color: #7ceefc; color: #102144; }
+
+.btn:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+/* --- Container das Outras Seções --- */
+main {
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* --- Seções e Habilidades (Mantidos com ajustes de cor) --- */
 h3 {
     font-size: 1.8em;
     font-weight: 700;
-    color: #004a99;
-    border-bottom: 3px solid #f0f0f0; /* Linha sutil de separação */
+    color: #2b4a8c;
+    border-bottom: 3px solid #f0f0f0;
     padding-bottom: 10px;
     margin-bottom: 20px;
 }
 
-p {
-    margin-bottom: 15px;
-}
-
-strong {
-    color: #004a99;
-    font-weight: 700;
-}
-
-/* --- Habilidades --- */
 .habilidades-container {
     display: grid;
-    /* Cria 2 colunas em telas maiores */
     grid-template-columns: 1fr 1fr;
-    gap: 20px; /* Espaço entre os cards */
+    gap: 20px;
 }
 
 .habilidade-card {
@@ -81,88 +115,14 @@ strong {
     background-color: #fcfcfc;
 }
 
-.habilidade-card h4 {
-    font-size: 1.2em;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-.habilidade-card ul {
-    list-style-position: inside;
-    padding-left: 5px;
-}
-
-.habilidade-card ul li {
-    margin-bottom: 10px;
-}
-
-/* --- Projetos --- */
-.projeto-card {
-    padding: 20px;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-}
-
-.projeto-card h4 {
-    font-size: 1.4em;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-.projeto-card ol, .projeto-card ul {
-    margin-left: 20px;
-    margin-bottom: 15px;
-}
-
-.projeto-card ol li {
-    margin-bottom: 10px;
-}
-.projeto-card ul li {
-    list-style-type: disc;
-    margin-bottom: 5px;
-}
-
-
-/* --- Rodapé --- */
-footer {
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9em;
-    color: #777;
-    background-color: #f9f9f9;
-}
-
-footer ul {
-    list-style: none;
-    display: flex; /* Coloca os links lado a lado */
-    justify-content: center;
-    gap: 25px; /* Espaço entre os links */
-    margin: 10px 0 15px 0;
-}
-
-footer ul li a {
-    text-decoration: none;
-    color: #004a99;
-    font-weight: 700;
-    font-size: 1.1em;
-}
-
-footer ul li a:hover {
-    text-decoration: underline;
-}
-
-/* --- Responsividade para Celular --- */
-@media (max-width: 700px) {
+/* --- Responsividade --- */
+@media (max-width: 800px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
     .habilidades-container {
-        /* Em telas pequenas, volta para 1 coluna */
         grid-template-columns: 1fr;
-    }
-
-    header h1 {
-        font-size: 1.8em;
-    }
-
-    header h2 {
-        font-size: 1em;
     }
 }
