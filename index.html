@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erik Henrique - Portfólio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
 <body>
 
 <section class="hero">
@@ -24,20 +33,120 @@
     </div>
 </section>
 
-<!-- SOBRE -->
+<!-- SOBRE / CURRICULO -->
 <section id="sobre" class="info-section">
     <h2>Sobre Mim</h2>
+
+    <p><strong>Erik Henrique Urbano da Silva</strong></p>
+    <p>📍 Volta Redonda - RJ</p>
+    <p>📞 (24) 99812-4890</p>
+    <p>📧 erick.us22@gmail.com</p>
+
+    <br>
+
     <p>
-        Sou um Analista de Dados e Desenvolvedor de BI & Automação focado em transformar dados em insights estratégicos.
-        Experiência com SAP, Python, Power BI e automação de processos.
+        Sou um Analista de Dados e Desenvolvedor de BI & Automação focado em transformar dados brutos em insights estratégicos.
     </p>
+
+    <p>
+        Tenho experiência completa no ciclo de dados, desde extração em SAP até soluções modernas com Python e Machine Learning.
+    </p>
+
+    <p>
+        Trabalho com automação utilizando Power Automate (RPA) e VBA, além de pipelines ETL e análise de dados com Python.
+    </p>
+
+    <p>
+        Especialista em dashboards no Power BI para tomada de decisão estratégica.
+    </p>
+
+    <br>
+
+    <h3>Experiência Profissional</h3>
+
+    <p><strong>ArcelorMittal</strong> — Estagiário de Suprimentos (Data Analytics & Automação)</p>
+
+    <ul>
+        <li>Dashboards estratégicos no Power BI</li>
+        <li>Análise de fornecedores e logística</li>
+        <li>Automação com Python, VBA e Power Automate</li>
+        <li>Extração e análise de dados via SAP</li>
+    </ul>
+
+    <br>
+
+    <h3>Formação</h3>
+    <p>Análise e Desenvolvimento de Sistemas — em andamento</p>
+
+    <br>
+
+    <h3>Habilidades</h3>
+
+    <div class="skills-block">
+
+        <h4>Análise de Dados & BI</h4>
+        <ul>
+            <li>Power BI (DAX, Power Query, Modelagem Dimensional)</li>
+            <li>Excel Avançado (Power Pivot, Macros, Dashboards)</li>
+            <li>Storytelling com Dados</li>
+        </ul>
+
+        <h4>Python para Dados</h4>
+        <ul>
+            <li>Pandas, NumPy, Scikit-learn</li>
+            <li>NLP (TF-IDF, Similaridade)</li>
+            <li>Clustering (DBSCAN, K-Means)</li>
+            <li>ETL e automação</li>
+        </ul>
+
+        <h4>Automação</h4>
+        <ul>
+            <li>Power Automate (RPA)</li>
+            <li>VBA + SAP</li>
+            <li>Web Scraping</li>
+        </ul>
+
+        <h4>Banco de Dados</h4>
+        <ul>
+            <li>SQL básico</li>
+        </ul>
+
+        <h4>Boas Práticas</h4>
+        <ul>
+            <li>Data Cleaning</li>
+            <li>ETL</li>
+            <li>Versionamento (Git)</li>
+        </ul>
+
+    </div>
+
 </section>
 
-<!-- PROJETO -->
+<!-- PROJETOS -->
 <section id="projeto" class="info-section">
-    <h2>Projeto em Destaque</h2>
-    <p><strong>Dashboard Logístico (Arcelor)</strong></p>
-    <p>Automatizei análise de fornecedores usando Python + Power BI.</p>
+    <h2>Projetos de Destaque</h2>
+
+    <div class="project-item">
+        <h3>Geospatial Logistics Intelligence Dashboard</h3>
+        <p>
+            Dashboard geoespacial com Python (Pandas) + Power BI para análise de risco logístico e fornecedores SAP.
+        </p>
+    </div>
+
+    <div class="project-item">
+        <h3>Material Classification Auditor</h3>
+        <p>
+            Auditor inteligente em Python para validar dados com regras de negócio e gerar relatórios automáticos.
+        </p>
+    </div>
+
+    <div class="project-item">
+        <h3>Semantic Material Classifier</h3>
+        <p>
+            Modelo NLP com TF-IDF para classificar e padronizar descrições de materiais.
+        </p>
+    </div>
+
 </section>
 
 <!-- CONTATO -->
@@ -55,14 +164,10 @@
 function toggleSection(id) {
     const section = document.getElementById(id);
 
-    // Fecha todas
     document.querySelectorAll('.info-section').forEach(sec => {
-        if (sec !== section) {
-            sec.style.display = "none";
-        }
+        if (sec !== section) sec.style.display = "none";
     });
 
-    // Abre ou fecha clicado
     if (section.style.display === "block") {
         section.style.display = "none";
     } else {
@@ -73,3 +178,4 @@ function toggleSection(id) {
 </script>
 
 </body>
+</html>
