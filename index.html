@@ -19,7 +19,7 @@
                 </div>
             </div>
             <nav>
-                <a href="#">Currículo</a>
+                <a href="javascript:void(0)" onclick="openModal()">Currículo</a>
                 <span class="separator">|</span>
                 <a href="#">Projetos</a>
                 <span class="separator">|</span>
@@ -45,65 +45,12 @@
                 </p>
 
                 <div class="buttons">
-                    <a href="#" class="btn btn-purple"><span>Currículo</span></a>
-                    <a href="#" class="btn btn-outline"><span>Projetos</span></a>
-                    <a href="#" class="btn btn-cyan"><span>Contato</span></a>
-                </div>
-            </div>
-
-        </div>
-    </main>
-
-</body>
-    <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erik Henrique - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-
-    <header class="navbar">
-        <div class="nav-content">
-            <div class="brand">
-                <span class="icon">👤</span>
-                <div class="brand-text">
-                    <span class="name">Erik Henrique</span>
-                    <span class="tag">Dev</span>
-                </div>
-            </div>
-            <nav>
-                <a href="javascript:void(0)" onclick="openModal()">Currículo</a>
-                <span class="separator">|</span>
-                <a href="#">Projetos</a>
-                <span class="separator">|</span>
-                <a href="#">Contato</a>
-            </nav>
-        </div>
-    </header>
-
-    <main class="hero">
-        <div class="hero-container">
-            <div class="profile-side">
-                <div class="circle-image">
-                    <img src="PerfilEr.jpeg" alt="Erik Henrique">
-                </div>
-            </div>
-
-            <div class="content-side">
-                <h1>Olá!</h1>
-                <h3>Um pouco sobre mim</h3>
-                <p>Sou um Analista de Dados e Desenvolvedor de BI & Automação focado em transformar dados brutos em insights estratégicos.</p>
-
-                <div class="buttons">
                     <a href="javascript:void(0)" class="btn btn-purple" onclick="openModal()"><span>Currículo</span></a>
                     <a href="#" class="btn btn-outline"><span>Projetos</span></a>
                     <a href="#" class="btn btn-cyan"><span>Contato</span></a>
                 </div>
             </div>
+
         </div>
     </main>
 
@@ -149,15 +96,20 @@
     </div>
 
     <script>
-        function openModal() { document.getElementById("resumeModal").style.display = "flex"; }
-        function closeModal() { document.getElementById("resumeModal").style.display = "none"; }
-        // Fecha se clicar fora do modal
+        function openModal() { 
+            document.getElementById("resumeModal").style.display = "flex"; 
+        }
+        function closeModal() { 
+            document.getElementById("resumeModal").style.display = "none"; 
+        }
+        // Fecha o modal se clicar fora da caixa de conteúdo
         window.onclick = function(event) {
             let modal = document.getElementById("resumeModal");
-            if (event.target == modal) { modal.style.display = "none"; }
+            if (event.target == modal) { 
+                modal.style.display = "none"; 
+            }
         }
     </script>
 
 </body>
-</html>
 </html>
