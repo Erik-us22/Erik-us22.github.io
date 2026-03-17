@@ -45,9 +45,9 @@
                 </p>
 
                 <div class="buttons">
-                    <a href="#" onclick="abrirModal('curriculo')" class="btn btn-purple">Currículo</a>
-<a href="#" onclick="abrirModal('projetos')" class="btn btn-outline">Projetos</a>
-<a href="#" onclick="abrirModal('contato')" class="btn btn-cyan">Contato</a>
+                    <a href="#" class="btn btn-purple">Currículo</a>
+                    <a href="#" class="btn btn-outline">Projetos</a>
+                    <a href="#" class="btn btn-cyan">Contato</a>
                 </div>
             </div>
 
@@ -55,87 +55,4 @@
     </main>
 
 </body>
-
-
-<!-- MODAL -->
-<div id="modal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="fecharModal()">&times;</span>
-        <div id="modal-body"></div>
-    </div>
-</div>
-
-<script>
-function abrirModal(tipo) {
-    const modal = document.getElementById("modal");
-    const body = document.getElementById("modal-body");
-
-    let conteudo = "";
-
-    if (tipo === "curriculo") {
-        conteudo = `
-        <h2>Currículo</h2>
-
-        <h3>Análise de Dados & BI</h3>
-        <ul>
-            <li>Power BI (DAX, Power Query, Modelagem)</li>
-            <li>Excel Avançado</li>
-            <li>Storytelling com dados</li>
-        </ul>
-
-        <h3>Python</h3>
-        <ul>
-            <li>Pandas, NumPy, Scikit-learn</li>
-            <li>NLP (TF-IDF)</li>
-            <li>Clustering</li>
-        </ul>
-
-        <h3>Automação</h3>
-        <ul>
-            <li>Power Automate</li>
-            <li>VBA + SAP</li>
-        </ul>
-        `;
-    }
-
-    if (tipo === "projetos") {
-        conteudo = `
-        <h2>Projetos</h2>
-
-        <h3>Geospatial Logistics Dashboard</h3>
-        <p>Dashboard com Python + Power BI para análise logística.</p>
-
-        <h3>Material Classification Auditor</h3>
-        <p>Validação automatizada de dados com regras de negócio.</p>
-
-        <h3>Semantic Material Classifier</h3>
-        <p>Modelo NLP para padronização de materiais.</p>
-        `;
-    }
-
-    if (tipo === "contato") {
-        conteudo = `
-        <h2>Contato</h2>
-
-        <p>📞 (24) 99812-4890</p>
-        <p>📧 erick.us22@gmail.com</p>
-
-        <p>
-        🔗 <a href="https://www.linkedin.com/in/erik-henrique-293734290" target="_blank">LinkedIn</a>
-        </p>
-
-        <p>
-        💻 <a href="https://github.com/Erik-us22" target="_blank">GitHub</a>
-        </p>
-        `;
-    }
-
-    body.innerHTML = conteudo;
-    modal.style.display = "flex";
-}
-
-function fecharModal() {
-    document.getElementById("modal").style.display = "none";
-}
-</script>
-    </html>
+</html>
