@@ -1,4 +1,10 @@
-/* --- Reset Básico e Fontes --- */
+:root {
+    --purple-main: #5925ed;
+    --cyan-accent: #79f7ff;
+    --bg-dark: #121b3a;
+    --bg-light-blue: #4a8df3;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,122 +13,123 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    line-height: 1.7;
-    /* Alterado para o degradê azul da imagem */
-    background: radial-gradient(circle at center, #2b4a8c 0%, #102144 100%);
-    background-attachment: fixed;
-    color: #333;
+    background-color: var(--bg-dark);
+    color: white;
+    overflow-x: hidden;
 }
 
-/* --- NOVO Cabeçalho (Estilo da Foto) --- */
-header {
-    width: 90%;
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 40px;
-    background: transparent; /* Removido o fundo branco fixo */
+/* Navbar Roxa */
+.navbar {
+    background-color: var(--purple-main);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+    border-bottom: 2px dashed rgba(255,255,255,0.3); /* Linha tracejada da sua imagem */
+}
+
+.logo-area {
     display: flex;
     align-items: center;
+    gap: 10px;
+}
+
+.user-icon { font-size: 1.5rem; }
+
+.dev-tag {
+    font-weight: 300;
+    margin-left: 15px;
+    font-size: 0.9rem;
+}
+
+.nav-links ul {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* Seção Hero com Gradiente Circular */
+.hero {
+    height: calc(100vh - 70px);
+    background: radial-gradient(circle, var(--bg-light-blue) 0%, var(--bg-dark) 70%);
+    display: flex;
     justify-content: center;
-    gap: 40px;
-    color: #fff;
-    text-align: left; /* Alinhado à esquerda conforme a imagem */
+    align-items: center;
 }
 
-.foto-perfil img {
-    width: 220px;
-    height: 220px;
-    border-radius: 50%; /* Faz a foto ficar circular */
-    border: 4px solid rgba(255, 255, 255, 0.3);
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    max-width: 1000px;
+}
+
+.profile-pic {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    border: none;
+    box-shadow: 0 0 50px rgba(0,0,0,0.2);
 }
 
-.texto-apresentacao h1 {
-    font-size: 3em;
-    margin-bottom: 5px;
+.hero-content h1 {
+    font-size: 5rem;
+    line-height: 1;
+    margin-bottom: 15px;
 }
 
-.texto-apresentacao p {
-    font-size: 1.1em;
-    max-width: 500px;
-    color: #dbeaff;
+.hero-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
 }
 
-/* --- Botões Estilo "Bolas" --- */
-.botoes-links {
+.hero-content p {
+    max-width: 400px;
+    font-weight: 300;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* Botões Estilo "Bolha" */
+.action-buttons {
     display: flex;
     gap: 15px;
-    margin-top: 25px;
 }
 
 .btn {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
+    padding: 20px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: 0.3s;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.8em;
-    text-transform: uppercase;
-    color: #fff;
-    transition: transform 0.3s, filter 0.3s;
-    text-align: center;
+    min-width: 120px;
 }
 
-.btn.curriculo { background-color: #5e5ce6; }
-.btn.projetos { border: 2px solid #70c7e8; background: transparent; }
-.btn.contato { background-color: #7ceefc; color: #102144; }
+.btn-purple {
+    background-color: var(--purple-main);
+    color: white;
+}
+
+.btn-outline {
+    border: 2px solid #2c3e50;
+    color: white;
+}
+
+.btn-cyan {
+    background-color: var(--cyan-accent);
+    color: #121b3a;
+}
 
 .btn:hover {
-    transform: scale(1.1);
-    filter: brightness(1.2);
-}
-
-/* --- Container das Outras Seções --- */
-main {
-    width: 90%;
-    max-width: 900px;
-    margin: 20px auto;
-    padding: 30px;
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
-
-/* --- Seções e Habilidades (Mantidos com ajustes de cor) --- */
-h3 {
-    font-size: 1.8em;
-    font-weight: 700;
-    color: #2b4a8c;
-    border-bottom: 3px solid #f0f0f0;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
-
-.habilidades-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.habilidade-card {
-    padding: 20px;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    background-color: #fcfcfc;
-}
-
-/* --- Responsividade --- */
-@media (max-width: 800px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .habilidades-container {
-        grid-template-columns: 1fr;
-    }
+    transform: scale(1.05);
 }
