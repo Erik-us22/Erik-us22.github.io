@@ -1,9 +1,106 @@
-.section {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0b1e3b;
+    color: white;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+/* FOTO */
+.circle-image {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.circle-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* TEXTO */
+.content-side h1 {
+    font-size: 100px;
+}
+
+.content-side h3 {
+    margin-bottom: 10px;
+}
+
+/* BOTÕES */
+.buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.btn {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-purple {
+    background: purple;
+    color: white;
+}
+
+.btn-outline {
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+}
+
+.btn-cyan {
+    background: cyan;
+    color: black;
+}
+
+/* SEÇÕES */
+.info-section {
     display: none;
     padding: 60px 10%;
     background: #0b1e3b;
 }
 
-.hidden {
-    display: none;
+.info-section h2 {
+    margin-bottom: 20px;
+}
+
+.skills-block h4 {
+    margin-top: 20px;
+    color: cyan;
+}
+
+.project-item {
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+a {
+    color: cyan;
 }
