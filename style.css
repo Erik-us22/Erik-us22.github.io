@@ -224,6 +224,63 @@ body {
         width: 280px;
         height: 280px;
     }
+    /* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(8px);
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-content {
+    background: rgba(11,30,59,0.95);
+    padding: 40px;
+    border-radius: 20px;
+    width: 600px;
+    max-height: 80%;
+    overflow-y: auto;
+    box-shadow: 0 0 40px rgba(0,0,0,0.5);
+    animation: aparecer 0.3s ease;
+}
+
+@keyframes aparecer {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.close {
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.modal h2 {
+    margin-bottom: 20px;
+}
+
+.modal h3 {
+    margin-top: 20px;
+    color: #7ef9ff;
+}
+
+.modal ul {
+    margin-left: 20px;
+}
+
+.modal a {
+    color: #7ef9ff;
+}
 
     .buttons {
         justify-content: center;
