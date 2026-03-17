@@ -18,6 +18,8 @@ body {
     padding: 20px 0;
     width: 100%;
     border-bottom: 2px dashed rgba(255,255,255,0.4);
+    position: relative;
+    z-index: 10;
 }
 
 .nav-content {
@@ -86,7 +88,7 @@ body {
     overflow: hidden;
 }
 
-/* GLOW */
+/* GLOW ATRÁS DA FOTO */
 .hero::before {
     content: "";
     position: absolute;
@@ -94,7 +96,7 @@ body {
     height: 900px;
     background: radial-gradient(circle, rgba(74,144,226,0.4), transparent 70%);
     top: 50%;
-    left: 50%;
+    left: 30%; /* Puxado mais para a esquerda onde está a foto */
     transform: translate(-50%, -50%);
     filter: blur(80px);
 }
@@ -104,8 +106,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 80%;
-    max-width: 1200px;
+    width: 85%;
+    max-width: 1300px;
     z-index: 1;
 }
 
@@ -123,7 +125,7 @@ body {
     background: rgba(255,255,255,0.1);
     padding: 8px;
     backdrop-filter: blur(10px);
-    box-shadow: 0 0 60px rgba(0,0,0,0.4);
+    box-shadow: 0 0 80px rgba(126,249,255,0.3); /* Glow ciano na foto */
 }
 
 .circle-image img {
@@ -135,52 +137,55 @@ body {
 
 /* TEXTO */
 .content-side {
-    flex: 1;
-    padding-left: 50px;
+    flex: 1.2;
+    padding-left: 60px;
 }
 
 .content-side h1 {
     font-size: 120px;
     font-weight: 700;
-    letter-spacing: -2px;
-    line-height: 1;
+    letter-spacing: -4px;
+    line-height: 0.9;
+    margin-bottom: 10px;
 }
 
 .content-side h3 {
-    font-size: 22px;
+    font-size: 26px;
     font-weight: 600;
     margin-bottom: 10px;
 }
 
 .content-side p {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.6;
-    max-width: 450px;
-    margin-bottom: 40px;
-    opacity: 0.7;
+    max-width: 500px;
+    margin-bottom: 45px;
+    opacity: 0.8;
 }
 
-/* BOTÕES */
+/* BOTÕES CIRCULARES - O SEGREDO DA CENTRALIZAÇÃO */
 .buttons {
     display: flex;
-    gap: 20px;
+    gap: 25px;
 }
 
 .btn {
-    width: 110px;
-    height: 110px;
+    width: 115px;
+    height: 115px;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
+    display: flex;            /* Flexbox para centralizar texto */
+    align-items: center;      /* Centraliza verticalmente */
+    justify-content: center;  /* Centraliza horizontalmente */
+    text-decoration: none !important; /* Remove sublinhados */
     font-weight: bold;
-    font-size: 14px;
-    transition: all 0.25s ease;
+    font-size: 15px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     text-align: center;
+    line-height: 1.1;
+    padding: 10px;            /* Evita que o texto encoste na borda se for longo */
 }
 
-/* VARIAÇÕES */
+/* ESTILOS DOS BOTÕES */
 .btn-purple {
     background: linear-gradient(135deg, #5d3df3, #7a5cff);
     box-shadow: 0 10px 30px rgba(93,61,243,0.4);
@@ -188,8 +193,9 @@ body {
 }
 
 .btn-outline {
-    border: 2px solid rgba(255,255,255,0.5);
+    border: 2px solid rgba(255,255,255,0.6);
     color: white;
+    background: rgba(255,255,255,0.05);
 }
 
 .btn-cyan {
@@ -198,18 +204,19 @@ body {
     box-shadow: 0 10px 30px rgba(126,249,255,0.4);
 }
 
-/* HOVER */
+/* HOVER INTERATIVO */
 .btn:hover {
-    transform: scale(1.12);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    transform: translateY(-10px) scale(1.1);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    filter: brightness(1.1);
 }
 
 /* RESPONSIVO */
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
     .hero-container {
         flex-direction: column;
         text-align: center;
-        gap: 40px;
+        gap: 50px;
     }
 
     .content-side {
@@ -217,70 +224,13 @@ body {
     }
 
     .content-side h1 {
-        font-size: 70px;
+        font-size: 80px;
     }
 
     .circle-image {
-        width: 280px;
-        height: 280px;
+        width: 300px;
+        height: 300px;
     }
-    /* MODAL */
-.modal {
-    display: none;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    backdrop-filter: blur(8px);
-    background: rgba(0,0,0,0.6);
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-}
-
-.modal-content {
-    background: rgba(11,30,59,0.95);
-    padding: 40px;
-    border-radius: 20px;
-    width: 600px;
-    max-height: 80%;
-    overflow-y: auto;
-    box-shadow: 0 0 40px rgba(0,0,0,0.5);
-    animation: aparecer 0.3s ease;
-}
-
-@keyframes aparecer {
-    from {
-        transform: scale(0.8);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-.close {
-    float: right;
-    font-size: 28px;
-    cursor: pointer;
-}
-
-.modal h2 {
-    margin-bottom: 20px;
-}
-
-.modal h3 {
-    margin-top: 20px;
-    color: #7ef9ff;
-}
-
-.modal ul {
-    margin-left: 20px;
-}
-
-.modal a {
-    color: #7ef9ff;
-}
 
     .buttons {
         justify-content: center;
