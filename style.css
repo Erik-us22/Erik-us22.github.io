@@ -1,155 +1,105 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none !important; /* Força a remoção de qualquer sublinhado */
-}
+/* --- ESTILOS DO MODAL (CURRÍCULO) --- */
 
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #0b1e3b;
-    color: white;
-    height: 100vh;
-    overflow: hidden;
-}
-
-/* NAVBAR */
-.navbar {
-    background: linear-gradient(90deg, #4a1cf2, #6a3df5);
-    padding: 20px 0;
-    width: 100%;
-    border-bottom: 2px dashed rgba(255,255,255,0.4);
-}
-
-.nav-content {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 50px;
-}
-
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.brand .name { font-weight: bold; font-size: 20px; }
-.brand .tag { font-size: 14px; opacity: 0.8; margin-left: 5px; }
-
-.nav-content nav a {
-    color: white;
-    font-size: 14px;
-    margin: 0 5px;
-}
-
-.separator { opacity: 0.5; }
-
-/* HERO */
-.hero {
-    height: calc(100vh - 85px);
-    background: radial-gradient(circle at center, #1a3a6a 0%, #0b1e3b 80%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.hero-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 85%;
-    max-width: 1200px;
-}
-
-/* FOTO */
-.profile-side { flex: 1; display: flex; justify-content: center; }
-
-.circle-image {
-    width: 420px; /* Aumentado levemente para equilibrar */
-    height: 420px;
-    border-radius: 50%;
-    padding: 12px;
-    background: rgba(255,255,255,0.1);
-    box-shadow: 0 0 50px rgba(126,249,255,0.2);
-}
-
-.circle-image img {
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    z-index: 1000; /* Fica acima de tudo */
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-/* TEXTO */
-.content-side { flex: 1.2; padding-left: 60px; }
-
-.content-side h1 {
-    font-size: 110px; /* Aumentado */
-    font-weight: 700;
-    line-height: 1;
-    margin-bottom: 10px;
-}
-
-.content-side h3 { font-size: 26px; margin-bottom: 8px; }
-.content-side p { font-size: 17px; opacity: 0.8; margin-bottom: 45px; max-width: 480px; }
-
-/* BOTÕES - AUMENTADOS E CENTRALIZADOS */
-.buttons {
-    display: flex;
-    gap: 25px;
-}
-
-.btn {
-    width: 140px;  /* Tamanho maior dos círculos */
-    height: 140px; /* Tamanho maior dos círculos */
-    border-radius: 50%;
-    
-    /* Centralização Máxima */
-    display: inline-flex;
-    align-items: center;
+    background-color: rgba(11, 30, 59, 0.7); /* Fundo escuro semi-transparente */
+    backdrop-filter: blur(12px); /* Efeito de vidro jateado no fundo */
     justify-content: center;
-    
-    font-weight: bold;
-    font-size: 18px; /* Fonte maior */
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.modal-content {
+    background: rgba(255, 255, 255, 0.08); /* Fundo levemente branco e transparente */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 50px;
+    border-radius: 25px;
+    width: 90%;
+    max-width: 900px;
+    position: relative;
     color: white;
-    text-align: center;
-    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    padding: 15px; /* Espaço interno de segurança */
+    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+    animation: scaleIn 0.3s ease-out; /* Animação ao abrir */
 }
 
-.btn span {
-    display: block;
-    width: 100%;
-    line-height: 1.2; /* Ajuste para não subir nem descer */
+/* Animação para o modal crescer suavemente */
+@keyframes scaleIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
 }
 
-.btn-purple { 
-    background: #6200ff; 
-    box-shadow: 0 12px 25px rgba(98,0,255,0.35); 
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 35px;
+    cursor: pointer;
+    color: #00f2ff;
+    transition: 0.3s;
 }
 
-.btn-outline { 
-    border: 3px solid white; /* Borda um pouco mais grossa */
-    background: rgba(255, 255, 255, 0.05); 
+.close-btn:hover {
+    color: #ff4757;
+    transform: rotate(90deg);
 }
 
-.btn-cyan { 
-    background: #00f2ff; 
-    color: #0b1e3b; 
-    box-shadow: 0 12px 25px rgba(0,242,255,0.35); 
+.modal-content h2 {
+    margin-bottom: 35px;
+    color: #00f2ff;
+    font-size: 32px;
+    border-bottom: 3px solid #6200ff;
+    display: inline-block;
+    padding-bottom: 8px;
 }
 
-.btn:hover {
-    transform: translateY(-10px) scale(1.08);
+/* Organização das colunas dentro do modal */
+.resume-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
 }
 
-/* RESPONSIVO */
-@media (max-width: 1000px) {
-    .hero-container { flex-direction: column; text-align: center; }
-    .content-side { padding-left: 0; margin-top: 40px; }
-    .content-side h1 { font-size: 75px; }
-    .btn { width: 110px; height: 110px; font-size: 14px; }
+.resume-item h4 {
+    color: #7a5cff;
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+
+.resume-item ul {
+    list-style: none;
+}
+
+.resume-item li {
+    font-size: 15px;
+    margin-bottom: 8px;
+    opacity: 0.9;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.4;
+}
+
+/* Marcador personalizado antes de cada item */
+.resume-item li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #00f2ff;
+    font-weight: bold;
+}
+
+/* Ajuste para telas de celular */
+@media (max-width: 700px) {
+    .resume-grid {
+        grid-template-columns: 1fr;
+    }
+    .modal-content {
+        padding: 30px;
+        width: 95%;
+    }
 }
