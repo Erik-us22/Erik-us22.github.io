@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio Erik Henrique</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         * {
             margin: 0;
@@ -14,15 +17,14 @@
         }
 
         body {
-            /* Fundo com gradiente radial profundo */
             background: radial-gradient(circle at center, #1a3a5f 0%, #0a1128 100%);
             color: white;
             height: 100vh;
             display: flex;
             flex-direction: column;
+            overflow: hidden; /* Mantém a tela fixa */
         }
 
-        /* HEADER COM GLASSMORPHISM */
         header {
             position: fixed;
             top: 0;
@@ -48,7 +50,6 @@
         }
         .nav-links a:hover { color: #fff; }
 
-        /* HERO SECTION */
         .hero {
             flex: 1;
             display: flex;
@@ -56,11 +57,7 @@
             justify-content: center;
             gap: 50px;
             padding: 0 10%;
-            margin-top: 80px; /* Espaço para o header fixo */
-        }
-
-        .profile-container {
-            position: relative;
+            margin-top: 80px;
         }
 
         .profile-pic {
@@ -68,50 +65,32 @@
             height: 280px;
             border-radius: 50%;
             object-fit: cover;
-            /* Glow mais suave e profissional */
             box-shadow: 0 0 50px rgba(138, 43, 226, 0.3);
             border: 2px solid rgba(255, 255, 255, 0.1);
         }
 
-        .content h1 {
-            font-size: 4rem;
-            margin-bottom: 10px;
-        }
+        .content h1 { font-size: 4rem; margin-bottom: 10px; }
+        .content h2 { font-size: 1.5rem; font-weight: 300; color: #ccc; margin-bottom: 20px; }
+        .content p { max-width: 450px; line-height: 1.6; color: rgba(255, 255, 255, 0.8); margin-bottom: 30px; }
 
-        .content h2 {
-            font-size: 1.5rem;
-            font-weight: 300;
-            color: #ccc;
-            margin-bottom: 20px;
-        }
-
-        .content p {
-            max-width: 450px;
-            line-height: 1.6;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 30px;
-        }
-
-        /* PALAVRAS-CHAVE EM DESTAQUE */
-        .highlight {
-            color: #a855f7; /* Roxo */
-            font-weight: 700;
-        }
+        .highlight { color: #a855f7; font-weight: 700; }
 
         /* BOTÕES */
-        .btn-group {
-            display: flex;
-            gap: 15px;
-        }
+        .btn-group { display: flex; gap: 15px; }
 
         .btn {
-            padding: 12px 30px;
+            padding: 12px 25px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
             font-size: 0.9rem;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
         }
+
+        /* Espaçamento do ícone */
+        .btn i { margin-right: 10px; font-size: 1.1rem; }
 
         .btn:hover {
             transform: translateY(-3px);
@@ -123,8 +102,9 @@
         .btn-cyan { background: #00e5ff; color: #0a1128; }
 
         @media (max-width: 768px) {
-            .hero { flex-direction: column; text-align: center; }
-            .btn-group { justify-content: center; }
+            .hero { flex-direction: column; text-align: center; overflow-y: auto; padding: 100px 5%; }
+            .btn-group { flex-direction: column; align-items: center; }
+            .content h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -133,15 +113,15 @@
     <header>
         <div class="logo">Erik Henrique</div>
         <nav class="nav-links">
-            <a href="#">Currículo</a>
-            <a href="#">Projetos</a>
-            <a href="#">Contato</a>
+            <a href="Currículo_Erik_Novo.pdf" download>Currículo</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#contato">Contato</a>
         </nav>
     </header>
 
     <main class="hero">
         <div class="profile-container">
-            <img src="https://via.placeholder.com/280" alt="Erik Henrique" class="profile-pic">
+            <img src="suafoto.jpg" alt="Erik Henrique" class="profile-pic">
         </div>
 
         <div class="content">
@@ -151,10 +131,19 @@
                 Sou um <span class="highlight">Analista de Dados</span> e Desenvolvedor de 
                 <span class="highlight">BI & Automação</span> focado em transformar dados brutos em insights estratégicos.
             </p>
+            
             <div class="btn-group">
-                <a href="#" class="btn btn-purple">Currículo</a>
-                <a href="#" class="btn btn-outline">Projetos</a>
-                <a href="#" class="btn btn-cyan">Contato</a>
+                <a href="Currículo_Erik_Novo.pdf" download="Currículo_Erik_Novo.pdf" class="btn btn-purple">
+                    <i class="fas fa-file-download"></i> Currículo
+                </a>
+
+                <a href="https://github.com/SEU-USUARIO" target="_blank" class="btn btn-outline">
+                    <i class="fas fa-code"></i> Projetos
+                </a>
+
+                <a href="https://wa.me/5524998124890?text=Olá%20Erik!%20Vi%20seu%20portfólio." target="_blank" class="btn btn-cyan">
+                    <i class="fab fa-whatsapp"></i> Contato
+                </a>
             </div>
         </div>
     </main>
