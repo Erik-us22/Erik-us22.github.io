@@ -138,7 +138,7 @@
         }
 
         /* BOTÕES TURBO NEON */
-        .btn-group { display: flex; gap: 15px; }
+        .btn-group { display: flex; gap: 15px; flex-wrap: wrap; }
 
         .btn {
             padding: 14px 28px;
@@ -196,6 +196,17 @@
             box-shadow: 0 0 25px var(--neon-cyan); 
         }
 
+        /* Botão de download menor */
+        .btn-download-link {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: underline;
+            margin-top: 8px;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        .btn-download-link:hover { color: var(--neon-purple); }
+
         /* RESPONSIVIDADE */
         @media (max-width: 900px) {
             .hero { flex-direction: column; text-align: center; padding: 100px 5% 50px; }
@@ -213,8 +224,10 @@
         <div class="logo">ERIK HENRIQUE</div>
         <nav class="nav-links">
             <a href="#sobre">Sobre</a>
-            <a href="https://github.com/Erik-us22" target="_blank">Projetos</a>
-            <a href="https://wa.me/5524998124890" target="_blank">Contato</a>
+            <a href="https://github.com/Erik-us22" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/erik-henrique-293734290" target="_blank">LinkedIn</a>
+            <a href="mailto:erick.us22@gmail.com">E-mail</a>
+            <a href="https://wa.me/5524998124890" target="_blank">WhatsApp</a>
         </nav>
     </header>
 
@@ -232,18 +245,21 @@
             </p>
             
             <div class="btn-group">
-                <a href="Currículo_Erik_New.pdf" download="Currículo_Erik_New.pdf" class="btn btn-purple">
-                    <i class="fas fa-file-download"></i> Currículo
-                </a>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <a href="Currículo_Erik_New.pdf" target="_blank" class="btn btn-purple">
+                        <i class="fas fa-file-alt"></i> Visualizar Currículo
+                    </a>
+                    <a href="Currículo_Erik_New.pdf" download class="btn-download-link">
+                        <i class="fas fa-download"></i> Baixar PDF diretamente
+                    </a>
+                </div>
 
                 <a href="https://github.com/Erik-us22" target="_blank" class="btn btn-outline">
                     <i class="fas fa-code"></i> Projetos
                 </a>
 
-                <a href="https://wa.me/5524998124890?text=Olá%20Erik!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20conversar." 
-                   target="_blank" 
-                   class="btn btn-cyan">
-                    <i class="fab fa-whatsapp"></i> Contato
+                <a href="https://linkedin.com/in/erik-henrique-293734290" target="_blank" class="btn btn-cyan">
+                    <i class="fab fa-linkedin"></i> LinkedIn
                 </a>
             </div>
         </div>
