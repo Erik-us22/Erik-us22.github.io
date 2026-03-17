@@ -1,129 +1,75 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erik Henrique - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-</head>
 <body>
 
-<header class="navbar">
-    <div class="nav-content">
-        <div class="brand">
-            <span>👤</span>
-            <div>
-                <strong>Erik Henrique</strong><br>
-                <small>Data Analyst & BI</small>
+<section class="hero">
+    <div class="hero-container">
+
+        <div class="profile-side">
+            <div class="circle-image">
+                <img src="PerfilEr.jpeg" alt="Erik Henrique">
             </div>
         </div>
 
-        <nav>
-            <a href="#" onclick="showSection('curriculo')">Currículo</a>
-            <a href="#" onclick="showSection('projeto')">Projetos</a>
-            <a href="#" onclick="showSection('contato')">Contato</a>
-        </nav>
-    </div>
-</header>
-
-<!-- HERO -->
-<section class="hero">
-    <div class="hero-container">
-        <div class="circle-image">
-            <img src="PerfilEr.jpeg">
-        </div>
-
-        <div>
+        <div class="content-side">
             <h1>Olá!</h1>
+            <h3>Eu sou Erik Henrique</h3>
             <p>Analista de Dados & BI | Python | Power BI | Automação</p>
 
             <div class="buttons">
-                <button onclick="showSection('curriculo')" class="btn btn-purple">Currículo</button>
-                <button onclick="showSection('projeto')" class="btn btn-outline">Projetos</button>
-                <button onclick="showSection('contato')" class="btn btn-cyan">Contato</button>
+                <button onclick="toggleSection('sobre')" class="btn btn-purple">Sobre</button>
+                <button onclick="toggleSection('projeto')" class="btn btn-outline">Projetos</button>
+                <button onclick="toggleSection('contato')" class="btn btn-cyan">Contato</button>
             </div>
         </div>
+
     </div>
 </section>
 
-<!-- CURRICULO -->
-<section id="curriculo" class="hidden section">
-    <h2>Currículo</h2>
-
-    <p><strong>Nome:</strong> Erik Henrique Urbano da Silva</p>
-    <p><strong>Telefone:</strong> (24) 99812-4890</p>
-    <p><strong>Email:</strong> erick.us22@gmail.com</p>
-    <p><strong>Local:</strong> Volta Redonda - RJ</p>
-
-    <h3>Resumo</h3>
+<!-- SOBRE -->
+<section id="sobre" class="info-section">
+    <h2>Sobre Mim</h2>
     <p>
-        Analista de Dados e Desenvolvedor de BI & Automação com foco em transformar dados em insights estratégicos.
+        Sou um Analista de Dados e Desenvolvedor de BI & Automação focado em transformar dados em insights estratégicos.
         Experiência com SAP, Python, Power BI e automação de processos.
     </p>
-
-    <h3>Experiência</h3>
-    <p><strong>ArcelorMittal</strong> - Estagiário de Suprimentos</p>
-    <ul>
-        <li>Dashboards estratégicos no Power BI</li>
-        <li>Automação com Python, VBA e Power Automate</li>
-        <li>Integração com SAP</li>
-    </ul>
-
-    <h3>Formação</h3>
-    <p>Análise e Desenvolvimento de Sistemas (em andamento)</p>
-
-    <h3>Habilidades</h3>
-    <ul>
-        <li>Power BI, DAX, Power Query</li>
-        <li>Python (Pandas, ML, NLP)</li>
-        <li>Automação (RPA, VBA)</li>
-        <li>SAP e ETL</li>
-    </ul>
 </section>
 
-<!-- PROJETOS -->
-<section id="projeto" class="hidden section">
+<!-- PROJETO -->
+<section id="projeto" class="info-section">
     <h2>Projeto em Destaque</h2>
-
-    <h3>Dashboard Logístico (Arcelor)</h3>
-
-    <p><strong>Problema:</strong> análise lenta em planilhas.</p>
-
-    <p><strong>Solução:</strong></p>
-    <ul>
-        <li>ETL com Python (Pandas)</li>
-        <li>Análise geoespacial</li>
-        <li>Dashboard interativo no Power BI</li>
-    </ul>
-
-    <p><strong>Resultado:</strong> decisões em segundos.</p>
+    <p><strong>Dashboard Logístico (Arcelor)</strong></p>
+    <p>Automatizei análise de fornecedores usando Python + Power BI.</p>
 </section>
 
 <!-- CONTATO -->
-<section id="contato" class="hidden section">
+<section id="contato" class="info-section">
     <h2>Contato</h2>
 
     <p>📞 (24) 99812-4890</p>
     <p>📧 erick.us22@gmail.com</p>
-    <p>🔗 <a href="https://www.linkedin.com/in/erik-henrique-293734290" target="_blank">LinkedIn</a></p>
 
-<p>💻 <a href="https://github.com/Erik-us22" target="_blank">GitHub</a></p>
+    <p>🔗 <a href="https://www.linkedin.com/in/erik-henrique-293734290" target="_blank">LinkedIn</a></p>
+    <p>💻 <a href="https://github.com/Erik-us22" target="_blank">GitHub</a></p>
 </section>
 
 <script>
-function showSection(id) {
-    document.querySelectorAll('.section').forEach(sec => {
-        sec.style.display = 'none';
+function toggleSection(id) {
+    const section = document.getElementById(id);
+
+    // Fecha todas
+    document.querySelectorAll('.info-section').forEach(sec => {
+        if (sec !== section) {
+            sec.style.display = "none";
+        }
     });
 
-    document.getElementById(id).style.display = 'block';
-
-    window.scrollTo({
-        top: document.getElementById(id).offsetTop - 50,
-        behavior: "smooth"
-    });
+    // Abre ou fecha clicado
+    if (section.style.display === "block") {
+        section.style.display = "none";
+    } else {
+        section.style.display = "block";
+        section.scrollIntoView({ behavior: "smooth" });
+    }
 }
 </script>
 
 </body>
-</html>
