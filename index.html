@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
+        /* Reset básico */
         * {
             margin: 0;
             padding: 0;
@@ -17,14 +18,16 @@
         }
 
         body {
+            /* Fundo com gradiente radial profundo para destacar o centro */
             background: radial-gradient(circle at center, #1a3a5f 0%, #0a1128 100%);
             color: white;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            overflow: hidden; /* Mantém a tela fixa */
+            overflow-x: hidden;
         }
 
+        /* HEADER COM EFEITO GLASSMORPHISM */
         header {
             position: fixed;
             top: 0;
@@ -40,88 +43,126 @@
             z-index: 1000;
         }
 
-        .logo { font-weight: 700; font-size: 1.2rem; }
+        .logo { font-weight: 700; font-size: 1.2rem; letter-spacing: 1px; }
+        
         .nav-links a {
             color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
-            margin-left: 20px;
+            margin-left: 25px;
             font-size: 0.9rem;
             transition: 0.3s;
         }
-        .nav-links a:hover { color: #fff; }
+        .nav-links a:hover { color: #00e5ff; }
 
+        /* SEÇÃO PRINCIPAL (HERO) */
         .hero {
             flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 50px;
+            gap: 60px;
             padding: 0 10%;
             margin-top: 80px;
         }
 
-        .profile-pic {
-            width: 280px;
-            height: 280px;
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: 0 0 50px rgba(138, 43, 226, 0.3);
-            border: 2px solid rgba(255, 255, 255, 0.1);
+        .profile-container {
+            position: relative;
         }
 
-        .content h1 { font-size: 4rem; margin-bottom: 10px; }
-        .content h2 { font-size: 1.5rem; font-weight: 300; color: #ccc; margin-bottom: 20px; }
-        .content p { max-width: 450px; line-height: 1.6; color: rgba(255, 255, 255, 0.8); margin-bottom: 30px; }
+        .profile-pic {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            /* Glow suave combinando com o tema */
+            box-shadow: 0 0 40px rgba(138, 43, 226, 0.4);
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .profile-pic:hover {
+            transform: scale(1.02);
+        }
 
-        .highlight { color: #a855f7; font-weight: 700; }
+        .content h1 { font-size: 4.5rem; margin-bottom: 5px; line-height: 1; }
+        .content h2 { font-size: 1.6rem; font-weight: 300; color: #cbd5e1; margin-bottom: 20px; }
+        .content p { 
+            max-width: 480px; 
+            line-height: 1.7; 
+            color: rgba(255, 255, 255, 0.8); 
+            margin-bottom: 35px;
+            font-size: 1.05rem;
+        }
 
-        /* BOTÕES */
+        /* DESTAQUE PARA PALAVRAS-CHAVE */
+        .highlight { 
+            color: #a855f7; 
+            font-weight: 700; 
+            border-bottom: 2px solid rgba(168, 85, 247, 0.3);
+        }
+
+        /* ESTILIZAÇÃO DOS BOTÕES */
         .btn-group { display: flex; gap: 15px; }
 
         .btn {
-            padding: 12px 25px;
-            border-radius: 30px;
+            padding: 14px 28px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             align-items: center;
+            justify-content: center;
         }
 
-        /* Espaçamento do ícone */
+        /* Ícones dentro dos botões */
         .btn i { margin-right: 10px; font-size: 1.1rem; }
 
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.4);
         }
 
+        /* Cores específicas dos botões */
         .btn-purple { background: #8a2be2; color: white; }
-        .btn-outline { border: 1px solid rgba(255, 255, 255, 0.3); color: white; }
-        .btn-cyan { background: #00e5ff; color: #0a1128; }
+        .btn-purple:hover { background: #9d4edd; box-shadow: 0 0 20px rgba(138, 43, 226, 0.5); }
 
-        @media (max-width: 768px) {
-            .hero { flex-direction: column; text-align: center; overflow-y: auto; padding: 100px 5%; }
-            .btn-group { flex-direction: column; align-items: center; }
-            .content h1 { font-size: 2.5rem; }
+        .btn-outline { 
+            border: 2px solid rgba(255, 255, 255, 0.2); 
+            color: white; 
+            background: transparent;
+        }
+        .btn-outline:hover { background: rgba(255, 255, 255, 0.1); border-color: white; }
+
+        .btn-cyan { background: #00e5ff; color: #0a1128; }
+        .btn-cyan:hover { background: #33ebff; box-shadow: 0 0 20px rgba(0, 229, 255, 0.4); }
+
+        /* RESPONSIVIDADE PARA CELULAR */
+        @media (max-width: 900px) {
+            .hero { flex-direction: column; text-align: center; padding: 100px 5% 50px; }
+            .content h1 { font-size: 3rem; }
+            .btn-group { flex-direction: column; width: 100%; max-width: 300px; margin: 0 auto; }
+            .profile-pic { width: 220px; height: 220px; }
+            header { padding: 15px 20px; }
+            .nav-links { display: none; } /* Esconde menu no mobile para simplificar */
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">Erik Henrique</div>
+        <div class="logo">ERIK HENRIQUE</div>
         <nav class="nav-links">
-            <a href="Currículo_Erik_Novo.pdf" download>Currículo</a>
-            <a href="#projetos">Projetos</a>
-            <a href="#contato">Contato</a>
+            <a href="#sobre">Sobre</a>
+            <a href="https://github.com/erikhenrique" target="_blank">Projetos</a>
+            <a href="https://wa.me/5524998124890" target="_blank">Contato</a>
         </nav>
     </header>
 
     <main class="hero">
         <div class="profile-container">
-            <img src="suafoto.jpg" alt="Erik Henrique" class="profile-pic">
+            <img src="PerfilEr.jpeg" alt="Erik Henrique" class="profile-pic">
         </div>
 
         <div class="content">
@@ -129,7 +170,7 @@
             <h2>Um pouco sobre mim</h2>
             <p>
                 Sou um <span class="highlight">Analista de Dados</span> e Desenvolvedor de 
-                <span class="highlight">BI & Automação</span> focado em transformar dados brutos em insights estratégicos.
+                <span class="highlight">BI & Automação</span> focado em transformar dados brutos em decisões inteligentes e processos eficientes.
             </p>
             
             <div class="btn-group">
@@ -137,11 +178,13 @@
                     <i class="fas fa-file-download"></i> Currículo
                 </a>
 
-                <a href="https://github.com/SEU-USUARIO" target="_blank" class="btn btn-outline">
+                <a href="https://github.com/erikhenrique" target="_blank" class="btn btn-outline">
                     <i class="fas fa-code"></i> Projetos
                 </a>
 
-                <a href="https://wa.me/5524998124890?text=Olá%20Erik!%20Vi%20seu%20portfólio." target="_blank" class="btn btn-cyan">
+                <a href="https://wa.me/5524998124890?text=Olá%20Erik!%20Vi%20seu%20portfólio%20e%20gostaria%20de%20conversar." 
+                   target="_blank" 
+                   class="btn btn-cyan">
                     <i class="fab fa-whatsapp"></i> Contato
                 </a>
             </div>
