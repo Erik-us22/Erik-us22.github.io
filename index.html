@@ -1,86 +1,58 @@
-<style>
-/* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erik Henrique - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
-body {
-    font-family: Arial, sans-serif;
-    background: radial-gradient(circle at center, #1e3c72, #0b1e3b);
-    color: white;
-}
+    <header class="navbar">
+        <div class="nav-content">
+            <div class="brand">
+                <span class="icon">👤</span>
+                <div class="brand-text">
+                    <span class="name">Erik Henrique</span>
+                    <span class="tag">Dev</span>
+                </div>
+            </div>
+            <nav>
+                <a href="#">Currículo</a>
+                <span class="separator">|</span>
+                <a href="#">Projetos</a>
+                <span class="separator">|</span>
+                <a href="#">Contato</a>
+            </nav>
+        </div>
+    </header>
 
-/* HERO */
-.hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    <main class="hero">
+        <div class="hero-container">
 
-.hero-container {
-    display: flex;
-    align-items: center;
-    gap: 80px;
-}
+            <div class="profile-side">
+                <div class="circle-image">
+                    <img src="PerfilEr.jpeg" alt="Erik Henrique">
+                </div>
+            </div>
 
-/* FOTO */
-.circle-image {
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 0 0 40px rgba(0,0,0,0.5);
-}
+            <div class="content-side">
+                <h1>Olá!</h1>
+                <h3>Um pouco sobre mim</h3>
+                <p>
+                    Sou um Analista de Dados e Desenvolvedor de BI & Automação focado em transformar dados brutos em insights estratégicos.
+                </p>
 
-.circle-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+                <div class="buttons">
+                    <a href="#" class="btn btn-purple">Currículo</a>
+                    <a href="#" class="btn btn-outline">Projetos</a>
+                    <a href="#" class="btn btn-cyan">Contato</a>
+                </div>
+            </div>
 
-/* TEXTO */
-.content-side h1 {
-    font-size: 90px;
-}
+        </div>
+    </main>
 
-.content-side p {
-    margin-top: 10px;
-    opacity: 0.8;
-}
-
-/* BOTÕES */
-.buttons {
-    display: flex;
-    gap: 25px;
-    margin-top: 30px;
-}
-
-.btn {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-/* CORES */
-.btn-purple {
-    background: #5f2eea;
-    color: white;
-}
-
-.btn-outline {
-    border: 2px solid white;
-    background: transparent;
-    color: white;
-}
-
-.btn-cyan {
-    background: #5cdcff;
-    color: black;
-}
-</style>
+</body>
+</html>
