@@ -9,13 +9,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* Variáveis de Cores Neon */
+        /* Variáveis de Cores Neon (Baseadas no Roxo e Ciano originais) */
         :root {
-            --neon-pink: #ff0055;
-            --neon-pink-glow: rgba(255, 0, 85, 0.6);
+            --neon-purple: #8a2be2;
+            --neon-purple-glow: rgba(138, 43, 226, 0.6);
             --neon-cyan: #00e5ff;
             --neon-cyan-glow: rgba(0, 229, 255, 0.6);
-            --text-glow: rgba(255, 255, 255, 0.5);
         }
 
         /* Reset básico */
@@ -27,7 +26,6 @@
         }
 
         body {
-            /* Fundo com gradiente radial profundo para destacar o centro */
             background: radial-gradient(circle at center, #1a3a5f 0%, #0a1128 100%);
             color: white;
             min-height: 100vh;
@@ -36,7 +34,7 @@
             overflow-x: hidden;
         }
 
-        /* HEADER COM EFEITO GLASSMORPHISM */
+        /* HEADER COM GLASSMORPHISM E LOGO NEON */
         header {
             position: fixed;
             top: 0;
@@ -55,11 +53,8 @@
         .logo { 
             font-weight: 700; 
             font-size: 1.2rem; 
-            letter-spacing: 2px; /* Aumentado levemente */
-            color: #fff;
-            text-transform: uppercase;
-            /* Efeito Neon no Logo */
-            text-shadow: 0 0 5px var(--text-glow), 0 0 10px var(--neon-cyan), 0 0 15px var(--neon-cyan);
+            letter-spacing: 2px; 
+            text-shadow: 0 0 10px var(--neon-cyan-glow), 0 0 20px rgba(0, 229, 255, 0.2);
         }
         
         .nav-links a {
@@ -68,14 +63,13 @@
             margin-left: 25px;
             font-size: 0.9rem;
             transition: 0.3s;
-            position: relative;
         }
         .nav-links a:hover { 
-            color: #fff; 
-            text-shadow: 0 0 5px var(--text-glow), 0 0 10px var(--neon-cyan);
+            color: var(--neon-cyan); 
+            text-shadow: 0 0 8px var(--neon-cyan);
         }
 
-        /* SEÇÃO PRINCIPAL (HERO) */
+        /* HERO SECTION */
         .hero {
             flex: 1;
             display: flex;
@@ -95,34 +89,29 @@
             height: 300px;
             border-radius: 50%;
             object-fit: cover;
-            /* Glow Neon na foto */
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2), 
-                        0 0 40px var(--neon-pink-glow), 
-                        0 0 60px var(--neon-pink-glow);
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            /* Brilho Neon Roxo na foto */
+            box-shadow: 0 0 30px var(--neon-purple-glow), 0 0 60px rgba(138, 43, 226, 0.2);
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
         
         .profile-pic:hover {
-            transform: scale(1.02);
-            box-shadow: 0 0 30px rgba(255, 255, 255, 0.3), 
-                        0 0 50px var(--neon-pink), 
-                        0 0 70px var(--neon-pink);
+            transform: scale(1.03);
+            box-shadow: 0 0 50px var(--neon-purple), 0 0 80px rgba(138, 43, 226, 0.4);
         }
 
-        /* Efeitos Neon no Texto Principal */
+        /* TEXTOS COM EFEITO NEON */
         .content h1 { 
             font-size: 4.5rem; 
             margin-bottom: 5px; 
             line-height: 1; 
-            color: #fff;
-            text-shadow: 0 0 10px var(--text-glow), 0 0 20px var(--neon-pink), 0 0 30px var(--neon-pink);
-            /* Animação suave de pulsação no brilho */
-            animation: neonPulse 2s infinite alternate;
+            text-shadow: 0 0 15px var(--neon-purple-glow), 0 0 30px rgba(138, 43, 226, 0.3);
+            animation: neonPulse 3s infinite alternate;
         }
+
         @keyframes neonPulse {
-            from { text-shadow: 0 0 10px var(--text-glow), 0 0 20px var(--neon-pink), 0 0 30px var(--neon-pink); }
-            to { text-shadow: 0 0 5px var(--text-glow), 0 0 15px var(--neon-pink), 0 0 25px var(--neon-pink); }
+            from { text-shadow: 0 0 10px var(--neon-purple-glow), 0 0 20px rgba(138, 43, 226, 0.2); }
+            to { text-shadow: 0 0 20px var(--neon-purple), 0 0 40px rgba(138, 43, 226, 0.5); }
         }
 
         .content h2 { 
@@ -130,9 +119,9 @@
             font-weight: 300; 
             color: #cbd5e1; 
             margin-bottom: 20px; 
-            /* Brilho mais sutil no subtítulo */
-            text-shadow: 0 0 5px var(--text-glow), 0 0 10px var(--neon-cyan);
+            text-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
         }
+
         .content p { 
             max-width: 480px; 
             line-height: 1.7; 
@@ -141,14 +130,14 @@
             font-size: 1.05rem;
         }
 
-        /* DESTAQUE PARA PALAVRAS-CHAVE COM NEON */
         .highlight { 
-            color: var(--neon-pink); 
+            color: #a855f7; 
             font-weight: 700; 
-            /* text-shadow: 0 0 5px var(--neon-pink-glow); REMOVIDO PARA MAIOR CLAREZA NO TEXTO LONGO, MAS PODE SER REATIVADO */
+            border-bottom: 2px solid rgba(168, 85, 247, 0.5);
+            text-shadow: 0 0 5px rgba(168, 85, 247, 0.5);
         }
 
-        /* ESTILIZAÇÃO DOS BOTÕES */
+        /* BOTÕES TURBO NEON */
         .btn-group { display: flex; gap: 15px; }
 
         .btn {
@@ -161,62 +150,60 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            text-transform: uppercase; /* Botões em caixa alta */
-            letter-spacing: 1px;
+            border: 2px solid transparent;
         }
 
-        /* Ícones dentro dos botões */
         .btn i { margin-right: 10px; font-size: 1.1rem; }
 
         .btn:hover {
             transform: translateY(-4px);
         }
 
-        /* Cores específicas dos botões com Efeito Neon */
+        /* Estilo Roxo Neon */
         .btn-purple { 
-            background: transparent; 
-            color: var(--neon-pink); 
-            border: 2px solid var(--neon-pink);
-            box-shadow: 0 0 10px var(--neon-pink-glow);
+            background: rgba(138, 43, 226, 0.1); 
+            color: white; 
+            border-color: var(--neon-purple);
+            box-shadow: 0 0 10px var(--neon-purple-glow);
         }
         .btn-purple:hover { 
-            background: var(--neon-pink); 
-            color: #fff;
-            box-shadow: 0 0 20px var(--neon-pink), 0 0 30px var(--neon-pink);
+            background: var(--neon-purple); 
+            box-shadow: 0 0 25px var(--neon-purple); 
         }
 
+        /* Estilo Outline Neon */
         .btn-outline { 
-            border: 2px solid rgba(255, 255, 255, 0.4); 
+            border: 2px solid rgba(255, 255, 255, 0.2); 
             color: white; 
             background: transparent;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
         }
         .btn-outline:hover { 
             background: rgba(255, 255, 255, 0.1); 
-            border-color: #fff; 
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            border-color: white; 
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
         }
 
+        /* Estilo Ciano Neon */
         .btn-cyan { 
-            background: transparent; 
+            background: rgba(0, 229, 255, 0.1); 
             color: var(--neon-cyan); 
-            border: 2px solid var(--neon-cyan);
+            border-color: var(--neon-cyan);
             box-shadow: 0 0 10px var(--neon-cyan-glow);
         }
         .btn-cyan:hover { 
             background: var(--neon-cyan); 
-            color: #0a1128;
-            box-shadow: 0 0 20px var(--neon-cyan), 0 0 30px var(--neon-cyan);
+            color: #0a1128; 
+            box-shadow: 0 0 25px var(--neon-cyan); 
         }
 
-        /* RESPONSIVIDADE PARA CELULAR */
+        /* RESPONSIVIDADE */
         @media (max-width: 900px) {
-            .hero { flex-direction: column; text-align: center; padding: 100px 5% 50px; gap: 40px; }
+            .hero { flex-direction: column; text-align: center; padding: 100px 5% 50px; }
             .content h1 { font-size: 3rem; }
             .btn-group { flex-direction: column; width: 100%; max-width: 300px; margin: 0 auto; }
             .profile-pic { width: 220px; height: 220px; }
             header { padding: 15px 20px; }
-            .nav-links { display: none; } /* Esconde menu no mobile para simplificar */
+            .nav-links { display: none; }
         }
     </style>
 </head>
@@ -226,14 +213,14 @@
         <div class="logo">ERIK HENRIQUE</div>
         <nav class="nav-links">
             <a href="#sobre">Sobre</a>
-            <a href="https://github.com/erikhenrique" target="_blank">Projetos</a>
+            <a href="https://github.com/Erik-us22" target="_blank">Projetos</a>
             <a href="https://wa.me/5524998124890" target="_blank">Contato</a>
         </nav>
     </header>
 
     <main class="hero">
         <div class="profile-container">
-      <img src="perfil.jpg" alt="Erik Henrique" class="profile-pic">
+            <img src="perfil.jpg" alt="Erik Henrique" class="profile-pic">
         </div>
 
         <div class="content">
